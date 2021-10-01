@@ -4,8 +4,25 @@
     padding: 0;
 }
 
+:root{
+    --dark-main-body: rgb(5, 5, 5);
+    --dark-main-nav: rgb(211, 210, 210);
+    --dark-main-fondCard: rgb(53, 53, 53);
+    --dark-main-textMain: rgb(241, 241, 241);
+    --main-body: white;
+    --main-nav: rgb(65, 65, 65);
+    --main-fondCard: rgb(31, 31, 31);
+    --main-textMain:  honeydew;
+    --main-textMain2: : rgb(65, 65, 65);
+    --main-rouge: #FE142F;
+    --main-noir: #000;
+    --body-back: white;
+}
+
 body{
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+ background-color: var(--body-back);
+
 }
 
 header{
@@ -21,9 +38,9 @@ header{
 nav>a{
     margin: auto 10px;
     text-decoration: none;
-    color: rgb(65, 65, 65);
+    color: var(--main-textMain2) ;
     font-size: large;
-    padding: 10px 20px; // ne pas mettre dans hover
+    padding: 10px 20px;  /* ne pas mettre dans hover */
    
 }
 
@@ -38,16 +55,18 @@ main{
 
 section{
     position: relative;
-    background-color: rgb(31, 31, 31);
+    background-color: var(--dark-main-fondCard);
     width: 70vw;
-    height: 60vh; 
+    height: 70vh; 
 }
 
 .fond{
     background-image: url(../img/AdobeStock_335161323_1_1.png);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
     width: 45vw;
-    height: 60vh; 
+    height: 70vh; 
     position: absolute;
     top: 0;
     right: 0;
@@ -55,7 +74,7 @@ section{
 }
 
 .contenu{
-    color: honeydew;
+    color: var(--main-textMain);
     position: absolute;
     margin: 30px 20px;
 }
@@ -73,17 +92,57 @@ p{
 
 .button{
     margin: 10px 0;
-    background: #FE142F ;
+    background: var(--main-rouge) ;
     width: 30%;
     padding: 10px 20px;
     text-align: center;
     border-radius: 5px;
+    color: var(--main-textMain);
+    font-weight: bolder;
+}
 
+.button:hover{
+    cursor: pointer;
 }
 
 nav>a:hover{
-  background-color:#FE142F ;
+  background-color:var(--main-rouge) ;
  
   border-radius: 5px;
-  color: honeydew;
+  color: var(--main-textMain);
+}
+
+.switch{
+    position: relative;
+    margin: auto;
+    width: 65px;
+    height: 34px;
+    border: black solid 2px;
+    border-radius: 50px;
+    background-color: var(--main-noir);
+}
+
+.switch::before{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: whitesmoke;  
+}
+
+body.dark{
+   --body-back: #454545;
+
+}
+
+body.dark .switch::before{
+    left: auto;
+    right: 5px;
+}
+
+body.dark nav{
+    color: honeydew;
 }
