@@ -44,7 +44,7 @@ section{
 }
 
 .fond{
-    background-image: url(/assets/img/AdobeStock_335161323_1_1.png);
+    background-image: url(../img/AdobeStock_335161323_1_1.png);
     background-size: cover;
     width: 45vw;
     height: 60vh; 
